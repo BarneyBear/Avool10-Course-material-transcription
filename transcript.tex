@@ -1,0 +1,110 @@
+%
+%  untitled
+%
+%  Created by Niklas Frisk on 2009-11-02.
+%  Copyright (c) 2009 __MyCompanyName__. All rights reserved.
+%
+\documentclass[]{article}
+
+% Use utf-8 encoding for foreign characters
+\usepackage[utf8]{inputenc}
+
+% Setup for fullpage use
+\usepackage[top=3cm, bottom=3cm]{geometry}
+\geometry{a4paper}
+% Uncomment some of the following if you use the features
+%
+% Running Headers and footers
+%\usepackage{fancyhdr}
+
+% Multipart figures
+%\usepackage{subfigure}
+
+% More symbols
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{latexsym}
+
+% Surround parts of graphics with box
+\usepackage{boxedminipage}
+
+% Package for including code in the document
+\usepackage{listings}
+
+% If you want to generate a toc for each chapter (use with book)
+\usepackage{minitoc}
+
+% This is now the recommended way for checking for PDFLaTeX:
+\usepackage{ifpdf}
+
+%\newif\ifpdf
+%\ifx\pdfoutput\undefined
+%\pdffalse % we are not running PDFLaTeX
+%\else
+%\pdfoutput=1 % we are running PDFLaTeX
+%\pdftrue
+%\fi
+
+\ifpdf
+\usepackage[pdftex]{graphicx}
+\else
+\usepackage{graphicx}
+\fi
+\title{Transcript of Course Handout}
+\author{Niklas Frisk}
+
+\date{2009-11-29}
+
+\begin{document}
+
+\ifpdf
+\DeclareGraphicsExtensions{.pdf, .jpg, .tif}
+\else
+\DeclareGraphicsExtensions{.eps, .jpg}
+\fi
+
+\maketitle
+
+\section{What is this and why?}
+This is a transcript of the hand-written handout in the Advanced Object-Oriented Systems course given at KTH in the spring 2010. If you're not a participant of this course your best course of action would most likely be to ignore this all together (it's not a terribly interesting read taken out of context). For those of you actually taking this course and wondering why we're doing this, it's simply for convenience. Handwritten notes can be slightly confusing at times (not that these are, please don't fail me!) but more importantly paper has yet to be tamed by man. Unless you shackle it with chains made of kryptonite it's bound to run off leaving you high and dry when you most need it. Now, pdf files on the other hand, you can trust. Tamed centuries ago by the brave souls at Adobe the pdf is a docile animal, content with lurking on your hard-drive for centuries. So without further ado I present to you the transcript.
+
+\section{Seqool: a Sequential Object-Oriented Language}
+Seqool is a simple theoretical Object-oriented language constructed simply for the use of modeling object-oriented languages.
+\subsection{Properties}
+\begin{itemize}
+	\item Object - an entity containing variables \& methods.
+	\item Sequential - no threads/concurrency.
+	\item Variables - instance/temporary.
+	\begin{itemize}
+		\item Instance Variable - lifetime of the object.
+		\item Temporary Variable - lifetime of the method call where they are local.
+	\end{itemize}
+\end{itemize}
+Variables are private, accessible only by local methods. Objects are grouped into classes and all objects of a given class have the same methods. Seqool includes two standard classes:
+\begin{itemize}
+	\item Int - integer arithmetic class.
+	\item Bool - Boolean logic class.
+\end{itemize}
+Instances exist at the start of execution. Seqool is strongly typed.
+\subsection{A Seqool Program}
+A Seqool program is a set of class definitions and a statement of a specific class (main(), i.e the entry-point of the application).
+\section{Syntax of Seqool}
+$C$ is the set of class names.
+\large
+\begin{eqnarray*}
+	\label{C - Class names}
+	c,c',c_1,c_2,...c_n \in C \\
+	\mbox{Int, Bool} \not\in C \\
+	C^+ = C \cup \{\mbox{Int, Bool}\}, d \in C^+
+\end{eqnarray*}
+$IVar(c)_d$ is the set of instance variables for a given class $c$ of type $d$. 
+\begin{eqnarray*}
+	\label{IVar - Instance Variables}
+	IVar(c)_d \mbox{ for } c \in C, d \in C^+\\
+	x^{c}_{d}\in IVar(c)_d \mbox{ or simply } x_d
+\end{eqnarray*}
+
+\normalsize
+\bibliographystyle{plain}
+\bibliography{}
+\end{document}
