@@ -103,7 +103,19 @@ $IVar(c)_d$ is the set of instance variables for a given class $c$ of type $d$.
 	IVar(c)_d \mbox{ for } c \in C, d \in C^+\\
 	x^{c}_{d}\in IVar(c)_d \mbox{ or simply } x_d
 \end{eqnarray*}
-
+$TVar_d$ is the set of temporary variables of type $d$.
+\begin{eqnarray*}
+	\label{Tvar - Temporary Variables}
+	TVar_d \mbox{ for } d \in C^+ \\
+	u_d \in TVar_d
+\end{eqnarray*}
+$MName^{c}_{d_0,d_1,...,d_n}$ is the set of method names of $c$ with return type $d_0 \mbox{ where } d_0 \neq \mbox{ void}$ and parameters 1 through n with type $d_1,...,d_n$.
+\begin{eqnarray*}
+	\label{Mname - Method Names}
+	\mbox{for } n \geq 0, c \in C, d_0,...,d_n \in C^+ \\
+	m^{c}_{d_0,...,d_n} \in MName^{c}_{d_0,...,d_n}
+\end{eqnarray*}
+These sets; $C, IVar(c)_d, Tvar_d, MName^{c}_{d_0,...,d_n}$ can be thought of as sets of declarations.
 \normalsize
 \bibliographystyle{plain}
 \bibliography{}
